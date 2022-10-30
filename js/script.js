@@ -37,14 +37,18 @@ var createNewTaskElement=function(taskString){
 
     //Each elements, needs appending
     checkBox.type="checkbox";
+    checkBox.className="checkbox";
     editInput.type="text";
-    editInput.className="input-area";
+    label.className="todo__input-area todo__label";
+    editInput.className="input todo__input todo__input-area";
+    listItem.className= "li";
 
     editButton.innerText="Edit"; //innerText encodes special characters, HTML does not.
-    editButton.className="edit";
+    editButton.className="button edit";
 
-    deleteButton.className="delete";
-    deleteButtonImg.src='./assets/remove.svg';
+    deleteButton.className="button delete";
+    deleteButtonImg.src='./assets/remove-ico.svg';
+    deleteButtonImg.className="completed__del-btn-img";
     deleteButton.appendChild(deleteButtonImg);
 
 
@@ -93,9 +97,13 @@ var editTask=function(){
         //label becomes the inputs value.
         label.innerText=editInput.value;
         editBtn.innerText="Edit";
+        label.className= "todo__input-area todo__label";
+        editInput.className = "input todo__input todo__input-area";
     }else{
         editInput.value=label.innerText;
         editBtn.innerText="Save";
+        label.className = "todo__input-area todo__label todo__label_edit-mode";
+        editInput.className = "input todo__input todo__input-area todo__input_edit-mode";
     }
 
     //toggle .edit-mode on the parent.
@@ -119,8 +127,13 @@ var deleteTask=function(){
 var taskCompleted=function(){
     console.log("Complete Task...");
 
+
     //Append the input-area list item to the #completed-tasks
     var listItem=this.parentNode;
+    var editInput=listItem.querySelector('input[type=text]');
+    var label=listItem.querySelector("label");    
+    label.className= "completed__input-area completed__label";
+    editInput.className = "input completed__input completed__input-area";
     completedTasksHolder.appendChild(listItem);
     bindTaskEvents(listItem, taskIncomplete);
 
@@ -129,10 +142,15 @@ var taskCompleted=function(){
 
 var taskIncomplete=function(){
     console.log("Incomplete Task...");
+
 //Mark input-area as incomplete.
     //When the checkbox is unchecked
     //Append the input-area list item to the #incomplete-tasks.
     var listItem=this.parentNode;
+    var editInput=listItem.querySelector('input[type=text]');
+    var label=listItem.querySelector("label");
+    label.className= "todo__input-area todo__label";
+    editInput.className = "input todo__input todo__input-area";
     incompleteTaskHolder.appendChild(listItem);
     bindTaskEvents(listItem,taskCompleted);
 }

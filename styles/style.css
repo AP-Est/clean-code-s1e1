@@ -107,8 +107,7 @@
     width: 318px;
 }
 
-.todo__input-checkbox,
-.completed__input-checkbox {
+.checkbox {
     margin: 0 10px;
 }
 
