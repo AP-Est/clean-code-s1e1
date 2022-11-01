@@ -20,30 +20,30 @@
         <button class="button add-item__button">Add</button>
       </div> 
     </div>
-    <div class="todo">
+    <section class="todo">
       <h3 class="h3">Todo</h3>
-      <ul id="incomplete-tasks" class="ul"> 
+      <ul id="incomplete-tasks" class="ul">
         <li class="li">
             <input type="checkbox" class="checkbox">
             <label class="todo__input-area todo__label">Pay Bills</label>
             <input class="input todo__input todo__input-area" type="text">
             <button class="button edit">Edit</button>
             <button class="button delete">
-            <img class="completed__del-btn-img" src="./assets/remove-ico.svg" alt="delete-button-image">
+            <img class="todo__del-btn-img" src="./assets/remove-ico.svg" alt="delete-button-image">
             </button>
         </li>
-      <li class="edit-mode li">
+        <li class="edit-mode li">
           <input type="checkbox" class="checkbox">
           <label class="todo__input-area todo__label todo__label_edit-mode">Go Shopping</label>
           <input class="input todo__input todo__input-area todo__input_edit-mode" type="text" value="Go Shopping">
           <button class="button edit">Save</button>
           <button class="button delete">
-          <img class="completed__del-btn-img" src="./assets/remove-ico.svg" alt="delete-button-image">
+          <img class="todo__del-btn-img" src="./assets/remove-ico.svg" alt="delete-button-image">
           </button>
-      </li>
+        </li>
       </ul>
-    </div>
-    <div class="completed">
+    </section>
+    <section class="completed">
       <h3 class="h3">Completed</h3>
       <ul id="completed-tasks" class="ul">
         <li class="li">
@@ -52,11 +52,11 @@
           <input class="input completed__input completed__input-area" type="text">
           <button class="button edit">Edit</button>
           <button class="button delete">
-            <img class="completed__del-btn-img" src="./assets/remove-ico.svg" alt="delete-button-image">
+            <img class="todo__del-btn-img" src="./assets/remove-ico.svg" alt="delete-button-image">
           </button>
         </li>
       </ul>
-    </div>
+    </section>
   </div>
   <script src="./js/script.js"></script>
 </body>
